@@ -1,4 +1,4 @@
-package com.bxacosta.springsecuritydemo;
+package dev.bxlab.rbac;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

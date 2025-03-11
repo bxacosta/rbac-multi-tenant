@@ -1,4 +1,4 @@
-package com.bxacosta.springsecuritydemo.entities;
+package dev.bxlab.rbac.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -8,18 +8,14 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "users")
-public class UserEntity {
+@Table(name = "roles")
+public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true)
-    private String username;
-
-    private String password;
-
-    private boolean enabled = true;
+    private String name;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "organization_id")
@@ -27,9 +23,9 @@ public class UserEntity {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
+            name = "role_permissions",
+            joinColumns = @JoinColumn(name = "role_id"),
+            inverseJoinColumns = @JoinColumn(name = "permission_id")
     )
-    private Set<RoleEntity> roles = new HashSet<>();
+    private Set<PermissionEntity> permissions = new HashSet<>();
 }

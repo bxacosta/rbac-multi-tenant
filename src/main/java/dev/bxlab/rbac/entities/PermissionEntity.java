@@ -1,4 +1,4 @@
-package com.bxacosta.springsecuritydemo.entities;
+package dev.bxlab.rbac.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

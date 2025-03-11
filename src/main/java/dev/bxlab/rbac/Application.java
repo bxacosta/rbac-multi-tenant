@@ -1,4 +1,4 @@
-package com.bxacosta.springsecuritydemo;
+package dev.bxlab.rbac;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
