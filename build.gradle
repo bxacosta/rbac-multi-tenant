@@ -33,6 +33,10 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     runtimeOnly 'org.postgresql:postgresql'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Flyway
+    implementation 'org.flywaydb:flyway-core:10.20.0'
+    runtimeOnly 'org.flywaydb:flyway-database-postgresql:10.20.0'
 }
 
 tasks.named('test') {
